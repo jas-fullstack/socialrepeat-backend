@@ -14,10 +14,10 @@ const swaggerOptions = {
       contact: {
         name: "Jaswinder Kumar"
       },
-      servers: ["http://localhost:3000"]
+      servers: ["http://localhost:3001"]
     },
     produces: ["application/json"],
-    host: `localhost:3000`
+    host: `localhost:3001`
   },
   apis: ["./api/v1/**/*.js"],
   layout: "AugmentingLayout"

@@ -18,7 +18,7 @@ npm start
 ```
 
 ```
-- Application will run on http://localhost:3000
-- Socket will run on http://localhost:3000
-- Swagger doc will run on http://localhost:3000/api-docs
+- Application will run on http://localhost:3001
+- Socket will run on http://localhost:3001
+- Swagger doc will run on http://localhost:3001/api-docs
 ```

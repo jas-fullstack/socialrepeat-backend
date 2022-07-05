@@ -3,13 +3,13 @@ var config = {
   "app": {
     "name": "socket",
     "host": "http://localhost",
-    "port": process.env.PORT || 3000,
+    "port": process.env.PORT || 3001,
     "socket": 3002,
     "jwtAlgo": "HS512",
     "jwtKey": "socket"
   },
   "db": {
-    "name": process.env.DB_NAME ||  "socialapp",
+    "name": process.env.DB_NAME ||  "youtubeclone",
     "host": process.env.DB_HOST || "localhost",
     "auth": process.env.DB_AUTH ? JSON.parse(process.env.DB_AUTH): false,
     "username": process.env.DB_USERNAME || "",

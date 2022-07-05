@@ -5,9 +5,9 @@
  */
 
 import user from "./v1/user";
-import teams from "./v1/teams";
+import videos from "./v1/videos";
 /*********** Combine all Routes ********************/
 export default [
     ...user,
-    ...teams
+    ...videos
 ];

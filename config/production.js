@@ -3,7 +3,7 @@ var config = {
   "app": {
     "name": "socket",
     "host": "http://localhost",
-    "port": process.env.PORT || 3000,
+    "port": process.env.PORT || 3001,
     "socket": 3002,
     "jwtAlgo": "HS512",
     "jwtKey": "socket"

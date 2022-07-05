@@ -5,7 +5,7 @@
  */
 
 import User from "../collections/user";
-import Teams from "../collections/teams";
+ 
 import Message from "../utilities/messages";
 import { encryptpassword, generateToken ,email } from "../utilities/universal";
 import mongoose from "mongoose";
@@ -73,8 +73,5 @@ export const getUsers = async (filter,options,sort) => {
   return data
 };
 
-/********* get members of owner *********/
-export const getteammemberService = async (payload) => {
-  return await Teams.find({owner : payload.ownerId},{owner : 0, __v : 0}).populate('member','-password -loginToken -status -lastLogin -isDeleted -__v');
-}
+ 
 

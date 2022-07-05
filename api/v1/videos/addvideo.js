@@ -1,21 +1,21 @@
 /*
- * @file: addteammember.js
+ * @file: addvideo.js
  * @description: It will add team member in system and email will send to member email address.
  * @author: Jaswinder Kumar
  */
 import express from "express";
 import { createValidator } from "express-joi-validation";
 import Joi from "@hapi/joi";
-import { addteammember } from "../../../controllers/user";
+import { addVideo } from "../../../controllers/video";
 import { checkToken } from "../../../utilities/universal";
 const app = express();
 const validator = createValidator({ passError: true });
 
 /**
  * @swagger
- * /api/v1/addteammember:
+ * /api/v1/addvideo:
  *  post:
- *   tags: ["Teams"]
+ *   tags: ["Videos"]
  *   summary: Add team member
  *   description: It will add team member in system and email will send to member email address
  *   parameters:
@@ -31,22 +31,12 @@ const validator = createValidator({ passError: true });
  *         required:
  *          - user login
  *         properties:
- *           firstName:
+ *           title:
  *             type: string
  *             required:
- *           lastName:
+ *           url:
  *             type: string
- *             required:
- *           email:
- *             type: string
- *             required:
- *           password: 
- *             type: string
- *             required:  
- *           timeZone:
- *             type: string
- *           country:
- *             type: string             
+ *             required: 
  *   responses:
  *    '200':
  *      description: success
@@ -55,38 +45,22 @@ const validator = createValidator({ passError: true });
  */
 
 const userSchema = Joi.object({
-  firstName: Joi.string()
+  title: Joi.string()
     .required()
-    .label("First Name"),
-  lastName: Joi.string()
+    .label("Video Title"),
+  url: Joi.string()
     .required()
-    .label("Last Name"),
-  email: Joi.string()
-    .trim()
-    .required()
-    .label("email"),
-  password: Joi.string()
-    .trim()
-    .min(3)
-    .required()
-    .label("password"),
-  timeZone: Joi.any()
-    .optional()
-    .allow("")
-    .label("timeZone"),
-  country: Joi.string()
-    .optional()
-    .allow("")
-    .label("country")
+    .label("url"),
+ 
 });
 
 app.post(
-  "/addteammember",
+  "/addvideo",
   validator.body(userSchema, {
     joi: { convert: true, allowUnknown: false }
   }),
   checkToken,
-  addteammember
+  addVideo
 );
 
 export default app;

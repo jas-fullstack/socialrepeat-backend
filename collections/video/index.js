@@ -7,21 +7,19 @@
 import mongoose from "mongoose";
 import dbSchema from "./db-schema";
 
-class TeamClass {
-  static save(payload) {
+class VideoClass {
+  static saveVideo(payload) {
     return this(payload).save();
   }
-  static checkTeam(payload) {
-    return this.findOne(payload);
-  }
-  static findOneByCondition(condition) {   
+  static findOneByCondition(condition) {  
     return this.findOne(condition);
   }
   static findByCondition(condition,options) {
     return this.find(condition,options);
   }
+  
 }
 
-dbSchema.loadClass(TeamClass);
+dbSchema.loadClass(VideoClass);
 
-export default mongoose.model("Team", dbSchema);
+export default mongoose.model("Video", dbSchema);
