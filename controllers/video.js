@@ -7,6 +7,7 @@
   import { successAction, failAction } from "../utilities/response";
   import { saveVideo  } from "../services/video";
   import Message from "../utilities/messages";
+  import Video from "../collections/video";
   
   /**************** Add video ***********/
   export const addVideo = async (req, res, next) => {
@@ -18,7 +19,18 @@
     } catch(error) {
         res.json(failAction(error.message));
     }
-  };
+  };  
+
+  export const getvideo = async (req,res)=>{
+  const payload = req.body;
+      try { 
+          const data = await Video.find();
+          res.json(successAction(data, "all videos"));
+      } catch(error) {
+          res.json(failAction(error.message));
+      }
+  }
+  
  
   
   

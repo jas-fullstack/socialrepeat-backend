@@ -5,7 +5,9 @@
  */
 
 import addvideo from "./addvideo";
+import getvideo from "./getvideo";
 
 export default [
   addvideo,
+  getvideo
 ];
