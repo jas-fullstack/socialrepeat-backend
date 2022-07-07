@@ -6,8 +6,14 @@
 
 import addvideo from "./addvideo";
 import getvideo from "./getvideo";
+import deletevideo from "./deletevideo";
+import updatevideo  from "./updatevideo";
+import getsinglevideo  from "./getsinglevideo";
 
 export default [
   addvideo,
-  getvideo
+  getvideo,
+  deletevideo,
+  updatevideo,
+  getsinglevideo
 ];

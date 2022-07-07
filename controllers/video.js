@@ -30,7 +30,42 @@
           res.json(failAction(error.message));
       }
   }
+
+  export const deletevideo = async (req,res)=>{
+      const payload = req.params;
+      try { 
+          const data = await Video.remove({_id : payload.id });
+          res.json(successAction(data, "Video deleted sucessfully!"));
+      } catch(error) {
+          res.json(failAction(error.message));
+      }
+  }
   
+  export const updatevideo = async (req,res)=>{
+    const payload = req.body;
+    console.log(payload)
+    try { 
+
+        const data = await Video.update({_id : payload.id },{ $set : { title : payload.title , url : payload.url  }});
+        res.json(successAction(data, "Video updated sucessfully!"));
+
+    } catch(error) {
+        res.json(failAction(error.message));
+    }
+  }
+
+  export const getsinglevideo = async (req,res)=>{
+    const payload = req.params;
+    console.log(payload)
+    try { 
+
+        const data = await Video.findOne({_id : payload.id });
+        res.json(successAction(data, `video details of ${payload.id}`));
+
+    } catch(error) {
+        res.json(failAction(error.message));
+    }
+  }
  
   
   
